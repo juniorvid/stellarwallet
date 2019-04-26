@@ -1,0 +1,14 @@
+{
+  "name": "stellarwallet",
+  "version": "1.0.0",
+  "description": "A quick demo of making a stellar wallet",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "author": "Shivaansh Kapoor",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
