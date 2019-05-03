@@ -5,24 +5,21 @@ const express = require('express');
 const port = 8000;
 const app = express();
 app.listen(port);
+const fetch = require('node-fetch');
 
-
-app.get('/',(req,res) => {
-    createAccount(req,res);
+app.get('/:sk',(req,res) => {
+    importAccount(req.params.sk);
 });
 
-const createAccount = async (req,res) => { 
-    try{
-        console.log(`Creating Account...`)
-        let pair = Stellar.Keypair.random()
-        let account = {
-            pk : pair.publicKey(),
-            sk : pair.secret()
-        }
-        console.log(`Public Key: ${account.pk}`);
-        console.log(`Secret Key: ${account.sk}`);
-        res.send(account);
-    }catch(err){
-        res.send({"Msg" : "ERROR : " + err})
-    }
-}
+     async function importAccount(sk) {
+        const secretKey = sk;
+        const sourceKeypair = Stellar.Keypair.fromSecret(secretKey);
+        const publicKey = sourceKeypair.publicKey();
+        console.log(publicKey);
+        const account = await server.loadAccount(publicKey);
+        console.log(account);
+     }
+
+
+
+     

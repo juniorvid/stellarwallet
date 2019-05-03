@@ -9,6 +9,8 @@
   "author": "Shivaansh Kapoor",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "node-fetch": "^2.5.0",
+    "stellar-sdk": "^0.15.3"
   }
 }
