@@ -33,5 +33,3 @@ app.post('/',(req,res) => {
         res.send(response);
      }
 
-
-     // SecretKey: SC3KSTDYOQ2SNFWAH2FO6GRM35H7JUG7XS3GAG5OYX6WY7RM5AELAJCO
